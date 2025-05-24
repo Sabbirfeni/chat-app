@@ -7,10 +7,10 @@ import MessageLog from "./MessageLog";
 function MessagePanelHeader() {
   return (
     <div className="flex flex-col items-start gap-5 self-stretch">
-      <div className="flex items-center gap-5 px-[18px] py-[10px] self-stretch">
+      <div className="flex items-center flex-wrap gap-5 px-[18px] py-[10px] self-stretch">
         <Avatar
           userName="Jacob Jones"
-          className="w-[88px] h-[88px] px-[2px] py-[4px] text-[24px]"
+          className="min-w-[88px] min-h-[88px] px-[2px] py-[4px] text-[24px]"
         />
         <div className="flex flex-col items-start gap-[10px]">
           <p className="text-[#232F40] text-[18px] font-semibold leading-[26px]">

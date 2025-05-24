@@ -17,5 +17,4 @@ function MessageInputBox({ setMessages }: MessageInputBoxProps) {
     </div>
   );
 }
-// sticky bottom-0
 export default MessageInputBox;

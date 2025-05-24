@@ -1,16 +1,16 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Button from "../../../common/Button";
 import { Message } from "@/app/types/message";
 import SenderImg from "@/public/images/Avatar.png";
+import MessageActions from "./MessageActions";
 
 type MessageInputBoxProps = {
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
 };
 
 function TextArea({ setMessages }: MessageInputBoxProps) {
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [message, setMessage] = useState("");
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const handleSendMessage = () => {
     const trimmed = message.trim();
@@ -51,7 +51,7 @@ function TextArea({ setMessages }: MessageInputBoxProps) {
         message ? "border-[#A946BA]" : "border-[#DAE0E4]"
       } bg-white`}
     >
-      {/* message input */}
+      {/* Message input box */}
       <textarea
         ref={textareaRef}
         value={message}
@@ -62,24 +62,8 @@ function TextArea({ setMessages }: MessageInputBoxProps) {
         className="flex justify-start items-start gap-[10px] px-[8px] self-stretch custom-scrollbar text-[#425066] font-normal text-[14px] leading-[20px] placeholder:text-[#7B8594] focus:outline-none resize-none"
         style={{ maxHeight: "100px" }}
       />
-      {/* message actions*/}
-      <div className="flex pt-2 items-center gap-3 self-stretch rounded-[16px]">
-        <div className="flex items-center gap-0.5 flex-1"></div>
-        <div className="flex items-center gap-[15px]">
-          <div className="flex items-start">
-            <Button
-              iconName={message ? "paper-airplane" : "paper-airplane-muted"}
-              lable="Send"
-              className={
-                message
-                  ? "bg-[#A946BA] text-white"
-                  : "bg-white text-[#44546F66]"
-              }
-              handleAction={handleSendMessage}
-            />
-          </div>
-        </div>
-      </div>
+
+      <MessageActions message={message} handleSendMessage={handleSendMessage} />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import MessagesPanel from "./MessagesPanel";
 import MessageInputBox from "./MessageInputBox";

@@ -9,7 +9,7 @@ interface AvatarProps {
 function Avatar({ avatarUrl, userName, className = "" }: AvatarProps) {
   return (
     <div
-      className={`relative flex w-8 h-8 text-xs flex-col justify-center items-center gap-2.5 rounded-full bg-[#FA8F53] overflow-hidden ${className}`}
+      className={`relative flex min-w-8 min-h-8 text-xs flex-col justify-center items-center gap-2.5 rounded-full bg-[#FA8F53] overflow-hidden ${className}`}
     >
       {avatarUrl ? (
         <Image

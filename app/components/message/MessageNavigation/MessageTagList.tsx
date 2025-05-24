@@ -13,7 +13,7 @@ const tags = [
   "high priority",
 ];
 
-const restTags = tags.length - 4;
+const restTagsCount = tags.length - 4;
 
 function MessageTagList() {
   return (
@@ -23,9 +23,9 @@ function MessageTagList() {
           <MessageTag key={`${tag}-${idx}`} tagName={tag} />
         ))}
 
-        {/* the number of rest tags */}
-        {restTags > 0 && (
-          <MessageTag showIcon={false} tagName={`${restTags}+`} />
+        {/* Number of rest tags */}
+        {restTagsCount > 0 && (
+          <MessageTag showIcon={false} tagName={`${restTagsCount}+`} />
         )}
       </div>
     </div>

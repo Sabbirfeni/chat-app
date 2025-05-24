@@ -9,6 +9,7 @@ function MessageGroup({ group }: { group: GroupedMessage }) {
       key={group.id}
       className="flex flex-col items-start gap-[14px] self-stretch relative"
     >
+      {/* Container for grouped messages and sender */}
       <div
         className={`flex items-start gap-2 self-stretch ${
           group.type === "incoming"
@@ -16,6 +17,7 @@ function MessageGroup({ group }: { group: GroupedMessage }) {
             : "pl-[68px] pr-[32px] pt-[21px] pb-[16px]"
         }`}
       >
+        {/* Messages column, aligned based on message type */}
         <div
           className={`flex flex-col ${
             group.type === "incoming" ? "items-start" : "items-end"
@@ -25,6 +27,8 @@ function MessageGroup({ group }: { group: GroupedMessage }) {
             <Message key={idx} type={group.type} text={text} />
           ))}
         </div>
+
+        {/* Sender avatar and info */}
         <MessageSender group={group} />
       </div>
     </div>
